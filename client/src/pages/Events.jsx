@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import { GET_ALL_EVENTS } from "../graphql/queries";
 import { NEW_EVENT_SUBSCRIPTION } from "../graphql/subscriptions";
 import Event from "../components/event/Event";
+import Form from "../components/form/Form";
 
 function Events() {
   const { loading, error, data, subscribeToMore } = useQuery(GET_ALL_EVENTS);
@@ -39,6 +40,8 @@ function Events() {
 
   return (
     <>
+      <h1>Add Event</h1>
+      <Form />
       <h1>Events</h1>
       <div className="events">
         {data?.events?.toReversed()?.map((event) => (

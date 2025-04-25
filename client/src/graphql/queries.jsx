@@ -11,6 +11,24 @@ export const GET_ALL_EVENTS = gql`
   }
 `;
 
+export const GET_ALL_USERS = gql`
+  query GetAllUsers {
+    users {
+      id
+      username
+    }
+  }
+`;
+
+export const GET_ALL_LOCATIONS = gql`
+  query GetAllLocations {
+    locations {
+      id
+      name
+    }
+  }
+`;
+
 export const GET_EVENT_BY_ID = gql`
   query getEvent($id: ID!) {
     event(id: $id) {
